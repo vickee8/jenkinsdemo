@@ -1,7 +1,6 @@
-import fire
+# Predefined name to greet
+name = "Thamizh"
 
-def hello(name="World"):
-  return "Hello %s!" % name
+# Greet the predefined name
+print(f"Hello, {name}!")
 
-if __name__ == '__main__':
-  fire.Fire(hello)
