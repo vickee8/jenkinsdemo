@@ -1,5 +1,5 @@
 # Predefined name to greet
-name = "Thamizh"
+name = "Vickee"
 
 # Greet the predefined name
 print(f"Hello, {name}!")
