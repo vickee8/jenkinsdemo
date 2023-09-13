@@ -1,0 +1,47 @@
+# AWS Multi-Tier Web Application Project
+
+## Objective
+The objective of this project is to create a multi-tier web application on Amazon Web Services (AWS) to test your foundational knowledge of various AWS services, including EC2, VPC, EBS, EFS, S3, and IAM.
+
+## Project Description
+You will create a simple web application consisting of a frontend and a backend component. The frontend will display a "Hello, AWS!" message and fetch a quote from the backend server, which will serve as the dynamic content. This project will help you practice setting up a complete AWS infrastructure for a web application.
+
+## Project Components
+
+### Frontend
+- **Instance Type:** Amazon EC2
+- **Description:** Create an EC2 instance to serve as the frontend web server. The frontend will display a static "Hello, AWS!" message and make a request to the backend to fetch and display a quote.
+- **Requirements:** 
+  - Deploy a simple HTML file (`index.html`) with JavaScript to make the request to the backend.
+  - Configure security groups to allow HTTP traffic.
+  - Use an Elastic IP if necessary for a static IP address.
+
+### Backend
+- **Instance Type:** Amazon EC2
+- **Description:** Create an EC2 instance to serve as the backend server. The backend will respond to requests from the frontend with a JSON object containing a quote.
+- **Requirements:** 
+  - Deploy a Node.js application that listens for requests on a specific endpoint (`/quote`) and returns a JSON response with a quote.
+  - Configure security groups to allow HTTP traffic on the specified port.
+  - Implement CORS (Cross-Origin Resource Sharing) to allow requests from the frontend server's IP.
+  - Install necessary Node.js dependencies (e.g., Express, cors).
+
+## Steps
+
+1. **VPC Setup:**
+   - Create a VPC with appropriate IP address ranges.
+   - Create two subnets: one for frontend and one for backend.
+   - Configure routing tables and internet gateway.
+
+2. **EC2 Instances:**
+   - Launch EC2 instances for both frontend and backend servers.
+   - Configure security groups to allow HTTP traffic.
+
+3. **Application Deployment:**
+   - Deploy sample web application code on both frontend and backend instances.
+
+4. **Testing:**
+   - Access the frontend server's public IP in a web browser.
+   - Verify that the application loads correctly.
+   - Test the communication between frontend and backend servers by interacting with the application.
+
+Good luck with your project, and happy learning!
