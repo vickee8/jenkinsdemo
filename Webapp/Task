@@ -44,14 +44,4 @@ You will create a simple web application consisting of a frontend and a backend 
    - Verify that the application loads correctly.
    - Test the communication between frontend and backend servers by interacting with the application.
 
-
-## Note
-Exclude the use of Amazon RDS for this project.
-
-## Sample Application Source Code
-You can find sample application source code for the frontend and backend components in the previous responses.
-
-## Submission
-Submit your project documentation, including architecture diagrams, configurations, and any code developed, to your instructor.
-
 Good luck with your project, and happy learning!
