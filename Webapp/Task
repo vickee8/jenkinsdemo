@@ -1,0 +1,102 @@
+# AWS Multi-Tier Web Application Project
+
+## Objective
+The objective of this project is to create a multi-tier web application on Amazon Web Services (AWS) to test your foundational knowledge of various AWS services, including EC2, VPC, EBS, EFS, S3, and IAM.
+
+## Project Description
+You will create a simple web application consisting of a frontend and a backend component. The frontend will display a "Hello, AWS!" message and fetch a quote from the backend server, which will serve as the dynamic content. This project will help you practice setting up a complete AWS infrastructure for a web application.
+
+## Project Components
+
+### Frontend
+- **Instance Type:** Amazon EC2
+- **Description:** Create an EC2 instance to serve as the frontend web server. The frontend will display a static "Hello, AWS!" message and make a request to the backend to fetch and display a quote.
+- **Requirements:** 
+  - Deploy a simple HTML file (`index.html`) with JavaScript to make the request to the backend.
+  - Configure security groups to allow HTTP traffic.
+  - Use an Elastic IP if necessary for a static IP address.
+
+### Backend
+- **Instance Type:** Amazon EC2
+- **Description:** Create an EC2 instance to serve as the backend server. The backend will respond to requests from the frontend with a JSON object containing a quote.
+- **Requirements:** 
+  - Deploy a Node.js application that listens for requests on a specific endpoint (`/quote`) and returns a JSON response with a quote.
+  - Configure security groups to allow HTTP traffic on the specified port.
+  - Implement CORS (Cross-Origin Resource Sharing) to allow requests from the frontend server's IP.
+  - Install necessary Node.js dependencies (e.g., Express, cors).
+
+### Storage
+- **S3:** Use Amazon S3 to store static assets (e.g., images, CSS, JavaScript files) for the frontend. Create an S3 bucket and upload these assets.
+
+### File System
+- **EFS:** Create an Amazon Elastic File System (EFS) to store shared files or data between frontend and backend servers. Mount the EFS on both the frontend and backend servers.
+
+### Networking
+- **VPC:** Set up a Virtual Private Cloud (VPC) with two subnets: one for the frontend and one for the backend. Configure the routing tables and internet gateway for internet access.
+
+## Steps
+
+1. **VPC Setup:**
+   - Create a VPC with appropriate IP address ranges.
+   - Create two subnets: one for frontend and one for backend.
+   - Configure routing tables and internet gateway.
+
+2. **EC2 Instances:**
+   - Launch EC2 instances for both frontend and backend servers.
+   - Configure security groups to allow HTTP traffic.
+   
+3. **EBS Volumes:**
+   - Attach EBS volumes to EC2 instances for data storage.
+
+4. **S3 Storage:**
+   - Create an S3 bucket for storing static assets.
+   - Upload static assets to the S3 bucket.
+
+5. **EFS File System:**
+   - Create an EFS file system.
+   - Configure access points and mount EFS on both frontend and backend instances.
+
+6. **Security:**
+   - Set up security groups for instances.
+   - Configure Network ACLs.
+   - Configure IAM roles and policies for EC2 instances.
+
+7. **Application Deployment:**
+   - Deploy sample web application code on both frontend and backend instances.
+   - Configure frontend server to serve static assets from the S3 bucket URL.
+
+8. **Testing:**
+   - Access the frontend server's public IP in a web browser.
+   - Verify that the application loads correctly.
+   - Test the communication between frontend and backend servers by interacting with the application.
+
+9. **Documentation:**
+   - Create a document outlining the architecture, services used, configurations, and important steps taken during the project.
+   - Include details about security configurations, IAM roles, security groups, and access controls.
+
+10. **Optional (High Availability):**
+    - Set up load balancing using Elastic Load Balancing (ELB) in front of frontend instances for high availability.
+
+11. **Optional (Scaling):**
+    - Implement Auto Scaling for both frontend and backend if expected traffic varies.
+
+12. **Optional (Domain Setup):**
+    - Configure Route 53 for DNS management and point it to frontend instances or load balancer.
+
+13. **Optional (Backup and Data Management):**
+    - Implement regular backups for critical data.
+    - Consider using EFS or EBS snapshots for data persistence.
+
+14. **Optional (Logging and Debugging):**
+    - Implement centralized logging with Amazon CloudWatch Logs for easier debugging and monitoring.
+
+## Note
+Exclude the use of Amazon RDS for this project.
+
+## Sample Application Source Code
+You can find sample application source code for the frontend and backend components in the previous responses.
+
+## Submission
+Submit your project documentation, including architecture diagrams, configurations, and any code developed, to your instructor.
+
+Good luck with your project, and happy learning!
