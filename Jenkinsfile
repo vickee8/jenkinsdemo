@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'Jenkins-slave'
+            label 'Jenkins-Slave'
             }
       }
     triggers {
