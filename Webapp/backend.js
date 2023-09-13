@@ -1,21 +1,31 @@
-const http = require('http');
+const express = require('express');
+const cors = require('cors'); // Import the 'cors' middleware
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/quote') {
-        const quote = {
-            quote: "To be or not to be, that is the question.",
-            author: "William Shakespeare"
-        };
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(quote));
-    } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Not Found');
-    }
+const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
+
+// Define a route to handle the '/quote' endpoint
+app.get('/quote', (req, res) => {
+    // Replace this with your actual quote data or retrieval logic
+    const quote = {
+        quote: "This is the quote from the backend.",
+        author: "Unknown"
+    };
+
+    // Set CORS headers to allow requests from any origin
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Send the quote as a JSON response
+    res.json(quote);
 });
 
+// Start your server on port 8080
 const port = 8080;
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Backend server is running on port ${port}`);
 });
 
