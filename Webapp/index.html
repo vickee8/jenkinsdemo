@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Tier Web App</title>
+</head>
+<body>
+    <h1>Hello, AWS!</h1>
+    <p id="quote"></p>
+    
+    <script>
+        // Fetch quote from backend
+        fetch('http://backend-server-ip:8080/quote')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('quote').textContent = data.quote;
+            })
+            .catch(error => console.error('Error fetching quote:', error));
+    </script>
+</body>
+</html>
+
